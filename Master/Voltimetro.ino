@@ -1,9 +1,12 @@
 #define sensor_vol A1
 #define interval  1000 
 #define res 16             //multiplicador de resistencias R2/(R1+R2)
+
+
 unsigned long previousMillis2 = 500;        // Para que lea con diferencia de tiempo con respecto a amp
 float v_mili2 = 0;
 float volt = 0;
+byte bateria = 0;
 
 float vol(){
 
