@@ -4,8 +4,9 @@
 
 
 unsigned long previousMillis2 = 500;        // Para que lea con diferencia de tiempo con respecto a amp
-float v_mili2 = 0;
-float volt = 0;
+unsigned int lectura_vol = 0;
+float volt_vol = 0;
+float volt_fin = 0;
 byte bateria = 0;
 
 float vol(){
@@ -15,9 +16,12 @@ float vol(){
     if (currentMillis2 - previousMillis2 >= interval) {
          
           previousMillis2 = currentMillis2;
-          v_mili2 = (analogRead(sensor_vol) * 5000 ) / 1023;
-          volt = v_mili * res;
-          return volt;
+          
+          lectura_vol = analogRead(sensor_vol);
+          volt_vol = lectura_vol * 0.004887;
+          volt_fin = volt_vol * res;
+
+          return volt_fin;
     }
 
 }
