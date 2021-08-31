@@ -13,7 +13,7 @@ float amp(){
   for (x=0; x < 100; x++) {
     
     lectura_amp = analogRead(sensor_amp);
-    volt_amp = lectura_amp * 0.004887;
+    volt_amp = lectura_amp * 0.004887585;
   
     if (volt_amp > valor_sensor){
       corrientesuma += ((volt_amp - valor_sensor) / ajuste_sensor);

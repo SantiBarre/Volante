@@ -1,6 +1,6 @@
 #define sensor_vol A1
 #define interval  1000 
-#define res 16             //multiplicador de resistencias R2/(R1+R2)
+#define res 9.2             //multiplicador de resistencias (R1+R2)/R2
 
 
 unsigned long previousMillis2 = 500;        // Para que lea con diferencia de tiempo con respecto a amp
@@ -18,7 +18,7 @@ float vol(){
           previousMillis2 = currentMillis2;
           
           lectura_vol = analogRead(sensor_vol);
-          volt_vol = lectura_vol * 0.004887;
+          volt_vol = lectura_vol * 0.004887585;
           volt_fin = volt_vol * res;
 
           return volt_fin;
